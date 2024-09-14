@@ -10,16 +10,12 @@ recognizer = sr.Recognizer()
 engine = pyttsx3.init()
 
 def speak(text):
-    """
-    Convert the given text to speech and play it.
-    """
+    #Convert the given text to speech and play it.
     engine.say(text)  # Add text to the speech queue
     engine.runAndWait()  # Wait for the speech to be played
 
 def processCommand(c):
-    """
-    Process the given command and perform the appropriate action.
-    """
+    #Process the given command and perform the appropriate action.
     c = c.lower()  # Convert command to lowercase for case-insensitive comparison
     print(f"Processing command: {c}")  # Print the command being processed
     
