@@ -3,13 +3,6 @@ import json
 import time
 
 def fetch_api_data(max_retries=3, retry_delay=2):
-    """
-    Fetches data from the specified API endpoint with retry capability.
-
-    Parameters:
-    max_retries (int): Maximum number of retries for the request.
-    retry_delay (int): Delay in seconds between retries.
-    """
     conn = http.client.HTTPSConnection("rumad-botdelive-v1.p.rapidapi.com")
     
     headers = {
