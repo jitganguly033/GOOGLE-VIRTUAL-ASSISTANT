@@ -74,27 +74,27 @@ def check_api():
         conn.close()  # Close the connection to the API
 
 if __name__ == "__main__":
-    speak("Initializing Jarvis...")  # Announce that Jarvis is initializing
-    print("Jarvis is running...")  # Print a message indicating that Jarvis is running
+    speak("Initializing Google...")  # Announce that Google is initializing
+    print("Google is running...")  # Print a message indicating that Google is running
 
     while True:
         try:
             with sr.Microphone() as source:
-                print("Listening for 'Jarvis'...")  # Print a message indicating that Jarvis is listening
+                print("Listening for 'Google'...")  # Print a message indicating that Google is listening
                 audio = recognizer.listen(source, timeout=3, phrase_time_limit=2)  # Listen for audio input
                 
                 try:
                     word = recognizer.recognize_google(audio)  # Recognize the speech using Google Speech Recognition
                     print(f"Recognized word: {word}")  # Print the recognized word
                     
-                    if word.lower() == "jarvis":
-                        speak("Yes Master")  # Announce that Jarvis is active
-                        print("Jarvis Active...")  # Print a message indicating Jarvis is active
+                    if word.lower() == "hello google":
+                        speak("Yes Master")  # Announce that Google is active
+                        print("Google Active...")  # Print a message indicating Google is active
                         audio = recognizer.listen(source)  # Listen for the command
                         command = recognizer.recognize_google(audio)  # Recognize the command
                         processCommand(command)  # Process the recognized command
                     else:
-                        print("Keyword 'Jarvis' not recognized.")  # Print a message if the keyword is not recognized
+                        print("Keyword 'Google' not recognized.")  # Print a message if the keyword is not recognized
                 
                 except sr.UnknownValueError:
                     print("Sorry, I did not understand that.")  # Print a message if the speech is not understood
@@ -105,4 +105,4 @@ if __name__ == "__main__":
             speak("Shutting down. Goodbye!")  # Announce that the program is shutting down
             break  # Exit the loop and end the program
         except Exception as e:
-            print(f"Error: {e}")  # Print any other errors
+            print(f"Error: {e}")  # Print any other errors 
